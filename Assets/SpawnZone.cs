@@ -62,6 +62,7 @@ public class SpawnZone : MonoBehaviour
         if (collision.tag == "Player")
         {
             //lock camera
+            //FindObjectOfType<PlayerCamera>().ToggleBool();
             StartCoroutine(spawnTimer(spawnRate));
             enemiesDefeated = 0;
             active = true;
@@ -90,7 +91,7 @@ public class SpawnZone : MonoBehaviour
         }
         while (bodyCountRequired > enemiesDefeated);
 
-        //unlock camera
+        //FindObjectOfType<PlayerCamera>().ToggleBool();
         Destroy(gameObject);
     }
 }
